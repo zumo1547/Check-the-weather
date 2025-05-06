@@ -1,64 +1,103 @@
-* {
+body {
   font-family: 'Prompt', sans-serif;
+  background: linear-gradient(135deg, #c3ecf5, #f5f7fa);
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  color: #333;
+  transition: background 0.3s, color 0.3s;
 }
 
-body {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  color: #fff;
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  min-height: 100vh;
-  padding: 30px 20px;
+  background: #4c4caf;
+  color: #fff;
+  padding: 1rem 2rem;
 }
 
-h1 {
-  margin-bottom: 20px;
-  font-size: 2rem;
+nav h2 {
+  margin: 0;
 }
 
-input, button {
-  padding: 10px;
-  font-size: 1rem;
+#toggleDark {
+  background: none;
   border: none;
-  border-radius: 5px;
-  margin: 5px;
-}
-
-input {
-  width: 200px;
-}
-
-button {
-  background-color: #ffffff;
-  color: #00bcd4;
-  font-weight: bold;
+  color: white;
+  font-size: 1.5rem;
   cursor: pointer;
 }
 
-.card {
-  margin-top: 30px;
-  background: rgba(255, 255, 255, 0.15);
-  padding: 20px;
-  border-radius: 15px;
+main {
   text-align: center;
-  width: 100%;
-  max-width: 400px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  margin-top: 50px;
+}
+
+.input-group {
+  margin: 20px 0;
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #aaa;
+  border-radius: 5px;
+  width: 250px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4c4caf;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #3a3a99;
+  transform: scale(1.05);
+}
+
+.card {
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 10px;
+  background: #ffffffaa;
+  max-width: 300px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s;
 }
 
 .weather-icon {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
 }
 
 .error {
-  margin-top: 20px;
-  color: #ffdddd;
-  background: rgba(0, 0, 0, 0.3);
-  padding: 10px;
-  border-radius: 8px;
+  color: red;
+  font-weight: bold;
+}
+
+body.dark {
+  background: #1e1e1e;
+  color: #eee;
+}
+
+body.dark nav {
+  background: #222;
+}
+
+body.dark .card {
+  background: #2c2c2c;
+  color: #ddd;
+}
+
+body.dark input[type="text"] {
+  background: #444;
+  color: white;
+  border-color: #666;
 }

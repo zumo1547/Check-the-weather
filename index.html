@@ -8,20 +8,29 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>🌤️ เช็กอากาศวันนี้</h1>
-  <div>
-    <input type="text" id="cityInput" placeholder="ใส่ชื่อเมือง เช่น Bangkok">
-    <button onclick="getWeather()">ดูอากาศ</button>
-  </div>
-  <div class="card" id="weatherCard" style="display: none;">
-    <h2 id="cityName"></h2>
-    <img id="weatherIcon" class="weather-icon" src="" alt="weather icon">
-    <p id="description"></p>
-    <p><strong>🌡️ อุณหภูมิ:</strong> <span id="temp"></span>°C</p>
-    <p><strong>💧 ความชื้น:</strong> <span id="humidity"></span>%</p>
-    <p><strong>💨 ลม:</strong> <span id="wind"></span> m/s</p>
-  </div>
-  <p class="error" id="errorMsg" style="display:none;"></p>
+  <nav>
+    <h2>🌦️ Weather Checker</h2>
+    <button id="toggleDark">🌙</button>
+  </nav>
+
+  <main>
+    <h1>🌤️ เช็กอากาศวันนี้</h1>
+    <div class="input-group">
+      <input type="text" id="cityInput" placeholder="ใส่ชื่อเมือง เช่น Bangkok">
+      <button onclick="getWeather()">ดูอากาศ</button>
+    </div>
+
+    <div class="card" id="weatherCard" style="display: none;">
+      <h2 id="cityName"></h2>
+      <img id="weatherIcon" class="weather-icon" src="" alt="weather icon">
+      <p id="description"></p>
+      <p><strong>🌡️ อุณหภูมิ:</strong> <span id="temp"></span>°C</p>
+      <p><strong>💧 ความชื้น:</strong> <span id="humidity"></span>%</p>
+      <p><strong>💨 ลม:</strong> <span id="wind"></span> m/s</p>
+    </div>
+
+    <p class="error" id="errorMsg" style="display:none;"></p>
+  </main>
 
   <script src="script.js"></script>
 </body>
