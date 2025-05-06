@@ -9,15 +9,63 @@ body {
 
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
   background: #4c4caf;
-  color: #fff;
   padding: 1rem 2rem;
+  color: white;
+  position: relative;
+  flex-wrap: wrap;
 }
 
-nav h2 {
-  margin: 0;
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav-center {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 25px;
+  list-style: none;
+  transition: all 0.3s ease;
+}
+
+.nav-center li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  padding: 8px 10px;
+  transition: color 0.3s;
+}
+
+.nav-center li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: 0.3s ease;
+  transform: translateX(-50%);
+}
+
+.nav-center li a:hover::after {
+  width: 100%;
+}
+
+.nav-center li a:hover {
+  color: #ffeb3b;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
 }
 
 #toggleDark {
@@ -100,4 +148,32 @@ body.dark input[type="text"] {
   background: #444;
   color: white;
   border-color: #666;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-center {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #4c4caf;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .nav-center.show {
+    display: flex;
+  }
+
+  .nav-center li {
+    margin: 10px 0;
+  }
 }
