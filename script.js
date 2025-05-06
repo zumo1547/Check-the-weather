@@ -32,12 +32,12 @@ async function getWeather() {
   }
 }
 
-// Toggle Dark Mode
+// Dark Mode
 document.getElementById("toggleDark").addEventListener("click", () => {
   document.body.classList.toggle("dark");
 });
 
-// Toggle Mobile Nav
-document.getElementById("navToggle").addEventListener("click", () => {
+// Toggle Menu
+document.getElementById("menuToggle").addEventListener("click", () => {
   document.getElementById("navLinks").classList.toggle("show");
 });

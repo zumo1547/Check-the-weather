@@ -8,25 +8,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <nav>
-    <div class="logo">🌦️ Weather Checker</div>
+  <header>
+    <nav class="navbar">
+      <div class="logo">🌦️ WeatherChecker</div>
 
-    <div class="nav-toggle" id="navToggle">☰</div>
+      <div class="center-menu">
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">หน้าแรก</a></li>
+          <li><a href="about.html">เกี่ยวกับ</a></li>
+          <li><a href="contact.html">ติดต่อ</a></li>
+        </ul>
+      </div>
 
-    <ul class="nav-center" id="navLinks">
-      <li><a href="#">หน้าแรก</a></li>
-      <li><a href="#">เกี่ยวกับ</a></li>
-      <li><a href="#">ติดต่อ</a></li>
-    </ul>
-
-    <button id="toggleDark">🌙</button>
-  </nav>
+      <div class="right-controls">
+        <button id="toggleDark">🌙</button>
+        <div class="menu-toggle" id="menuToggle">☰</div>
+      </div>
+    </nav>
+  </header>
 
   <main>
     <h1>🌤️ เช็กอากาศวันนี้</h1>
     <div class="input-group">
       <input type="text" id="cityInput" placeholder="ใส่ชื่อเมือง เช่น Bangkok">
-      <button onclick="getWeather()">ดูอากาศ</button>
+      <div class="button-wrap">
+        <button onclick="getWeather()">ดูอากาศ</button>
+      </div>
     </div>
 
     <div class="card" id="weatherCard" style="display: none;">

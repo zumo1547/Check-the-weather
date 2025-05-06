@@ -1,88 +1,102 @@
 body {
   font-family: 'Prompt', sans-serif;
-  background: linear-gradient(135deg, #c3ecf5, #f5f7fa);
   margin: 0;
-  padding: 0;
+  background: linear-gradient(135deg, #c3ecf5, #f5f7fa);
   color: #333;
   transition: background 0.3s, color 0.3s;
 }
 
-nav {
+header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navbar {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   background: #4c4caf;
   padding: 1rem 2rem;
-  color: white;
-  position: relative;
   flex-wrap: wrap;
+  position: relative;
 }
 
 .logo {
+  color: white;
   font-weight: bold;
-  font-size: 1.2rem;
 }
 
-.nav-center {
+.center-menu {
+  flex: 1;
   display: flex;
   justify-content: center;
-  flex: 1;
-  gap: 25px;
-  list-style: none;
-  transition: all 0.3s ease;
 }
 
-.nav-center li a {
+.nav-links {
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
   color: white;
   text-decoration: none;
   font-weight: 600;
+  padding: 8px;
   position: relative;
-  padding: 8px 10px;
-  transition: color 0.3s;
 }
 
-.nav-center li a::after {
-  content: "";
+.nav-links li a::after {
+  content: '';
   position: absolute;
-  bottom: 0;
   left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
   width: 0;
   height: 2px;
   background: white;
-  transition: 0.3s ease;
-  transform: translateX(-50%);
+  transition: width 0.3s ease;
 }
 
-.nav-center li a:hover::after {
+.nav-links li a:hover::after {
   width: 100%;
 }
 
-.nav-center li a:hover {
-  color: #ffeb3b;
-}
-
-.nav-toggle {
-  display: none;
-  font-size: 1.8rem;
-  cursor: pointer;
-  color: white;
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 #toggleDark {
   background: none;
   border: none;
-  color: white;
   font-size: 1.5rem;
+  color: white;
   cursor: pointer;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* Main */
 main {
   text-align: center;
-  margin-top: 50px;
+  padding: 50px 20px;
 }
 
 .input-group {
-  margin: 20px 0;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 input[type="text"] {
@@ -90,19 +104,23 @@ input[type="text"] {
   font-size: 16px;
   border: 2px solid #aaa;
   border-radius: 5px;
-  width: 250px;
+  width: 80%;
+  max-width: 300px;
+}
+
+.button-wrap {
+  margin-top: 15px;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 10px 25px;
   background-color: #4c4caf;
   color: white;
   border: none;
+  border-radius: 6px;
   font-size: 16px;
-  border-radius: 5px;
-  margin-left: 10px;
   cursor: pointer;
-  transition: background 0.3s, transform 0.2s;
+  transition: all 0.3s;
 }
 
 button:hover {
@@ -114,10 +132,9 @@ button:hover {
   margin: 30px auto;
   padding: 20px;
   border-radius: 10px;
-  background: #ffffffaa;
+  background: #ffffffdd;
   max-width: 300px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  transition: all 0.3s;
 }
 
 .weather-icon {
@@ -135,13 +152,12 @@ body.dark {
   color: #eee;
 }
 
-body.dark nav {
+body.dark .navbar {
   background: #222;
 }
 
 body.dark .card {
   background: #2c2c2c;
-  color: #ddd;
 }
 
 body.dark input[type="text"] {
@@ -151,29 +167,32 @@ body.dark input[type="text"] {
 }
 
 /* Responsive */
-@media screen and (max-width: 768px) {
-  .nav-toggle {
-    display: block;
+@media (max-width: 768px) {
+  .center-menu {
+    width: 100%;
   }
 
-  .nav-center {
+  .nav-links {
     display: none;
     flex-direction: column;
-    width: 100%;
     background: #4c4caf;
     position: absolute;
     top: 60px;
+    width: 100%;
     left: 0;
-    z-index: 999;
     padding: 10px 0;
     text-align: center;
   }
 
-  .nav-center.show {
+  .nav-links.show {
     display: flex;
   }
 
-  .nav-center li {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links li {
     margin: 10px 0;
   }
 }
