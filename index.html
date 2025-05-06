@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <title>ดูพยากรณ์อากาศ</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🌤️ เช็กอากาศวันนี้</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>🌤 พยากรณ์อากาศ</h1>
+  <h1>🌤️ เช็กอากาศวันนี้</h1>
+  <div>
     <input type="text" id="cityInput" placeholder="ใส่ชื่อเมือง เช่น Bangkok">
-    <button onclick="getWeather()">เช็คอากาศ</button>
-    <div id="result"></div>
+    <button onclick="getWeather()">ดูอากาศ</button>
   </div>
+  <div class="card" id="weatherCard" style="display: none;">
+    <h2 id="cityName"></h2>
+    <img id="weatherIcon" class="weather-icon" src="" alt="weather icon">
+    <p id="description"></p>
+    <p><strong>🌡️ อุณหภูมิ:</strong> <span id="temp"></span>°C</p>
+    <p><strong>💧 ความชื้น:</strong> <span id="humidity"></span>%</p>
+    <p><strong>💨 ลม:</strong> <span id="wind"></span> m/s</p>
+  </div>
+  <p class="error" id="errorMsg" style="display:none;"></p>
+
   <script src="script.js"></script>
 </body>
 </html>
